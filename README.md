@@ -23,3 +23,4 @@ A multi-page responsive dental clinic website starter.
 
 ## Run
 Open `index.html` in VS Code with Live Server, or upload the whole folder to your hosting provider.
+# smile-care
