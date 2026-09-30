@@ -5,20 +5,25 @@
 
 @media (max-width: 900px) {
 
-    /* HEADER */
+    body {
+        background: #f6f5ef;
+    }
+
+    /* PREMIUM MOBILE HEADER */
     .header {
-        height: 70px;
+        height: 72px;
         padding: 0 20px;
-        gap: 12px;
         position: sticky;
         top: 0;
-        z-index: 100;
-        background: rgba(246,245,239,.96);
-        backdrop-filter: blur(18px);
+        z-index: 999;
+        background: rgba(246,245,239,.88);
+        backdrop-filter: blur(22px);
+        border-bottom: 1px solid rgba(24,51,46,.08);
     }
 
     .logo {
         font-size: 20px;
+        letter-spacing: -.4px;
     }
 
     .header nav {
@@ -28,140 +33,146 @@
     .menu {
         display: grid !important;
         place-items: center;
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
         margin-left: auto;
-        border: 1px solid var(--line);
-        border-radius: 12px;
+        border: 1px solid rgba(24,51,46,.12);
+        border-radius: 50%;
         background: #fff;
-        color: var(--ink);
-        font-size: 22px;
+        font-size: 21px;
         cursor: pointer;
-        position: relative;
-        z-index: 101;
-    }
-
-    .nav-book {
-        display: none;
+        z-index: 1001;
     }
 
     /* MOBILE MENU */
     .header nav.mobile-open {
         display: flex !important;
         position: absolute;
-        top: 70px;
+        top: 82px;
         left: 12px;
         right: 12px;
         flex-direction: column;
-        gap: 0;
-        padding: 10px 20px;
-        background: rgba(255,255,255,.98);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        box-shadow: 0 20px 50px rgba(24,51,46,.16);
-        animation: menuDrop .25s ease;
+        padding: 12px 22px;
+        background: rgba(255,255,255,.97);
+        backdrop-filter: blur(25px);
+        border: 1px solid rgba(24,51,46,.08);
+        border-radius: 22px;
+        box-shadow: 0 25px 70px rgba(24,51,46,.18);
+        animation: premiumMenu .28s ease;
     }
 
     .header nav.mobile-open a {
-        display: block;
-        padding: 16px 4px;
-        border-bottom: 1px solid var(--line);
+        padding: 17px 2px;
+        border-bottom: 1px solid #edf0ee;
         font-size: 15px;
     }
 
     .header nav.mobile-open a:last-child {
-        border-bottom: 0;
+        border-bottom: none;
     }
 
-    @keyframes menuDrop {
+    @keyframes premiumMenu {
         from {
             opacity: 0;
-            transform: translateY(-8px);
+            transform: translateY(-15px) scale(.98);
         }
+
         to {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
         }
     }
 
 
-    /* HERO */
+    /* =================================
+       LUXURY HERO
+    ================================= */
+
     .hero {
         min-height: auto;
+        padding: 55px 20px 45px;
         display: flex;
         flex-direction: column;
         gap: 38px;
-        padding: 48px 20px 55px;
-    }
-
-    .hero-copy {
-        width: 100%;
     }
 
     .eyebrow {
         font-size: 10px;
-        letter-spacing: 1.8px;
-        margin-bottom: 12px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
     }
 
     .hero h1 {
-        font-size: clamp(44px, 13vw, 58px);
-        line-height: .98;
-        letter-spacing: -2px;
-        margin-bottom: 20px;
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(48px, 14vw, 64px);
+        line-height: .94;
+        letter-spacing: -2.5px;
+        max-width: 380px;
+        margin-bottom: 22px;
     }
 
     .hero p {
-        font-size: 16px;
-        line-height: 1.7;
-        margin-bottom: 25px;
+        font-size: 15px;
+        line-height: 1.75;
+        max-width: 360px;
+        color: var(--muted);
+        margin-bottom: 28px;
     }
 
     .hero-actions {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 11px;
     }
 
     .hero-actions .btn {
         width: 100%;
-        min-height: 54px;
+        min-height: 56px;
+        border-radius: 999px;
+        font-size: 14px;
     }
 
     .trust {
-        margin-top: 28px;
-        gap: 12px;
+        margin-top: 27px;
     }
 
 
     /* HERO IMAGE */
     .hero-visual {
+        position: relative;
         width: 100%;
     }
 
     .hero-visual > img {
         width: 100%;
-        height: 430px;
+        height: 455px;
         object-fit: cover;
-        border-radius: 100px 100px 22px 22px;
+        border-radius: 150px 150px 24px 24px;
+        box-shadow: 0 25px 70px rgba(24,51,46,.15);
     }
 
     .floating-card {
-        left: 12px;
-        right: 12px;
+        left: 14px;
+        right: 14px;
         bottom: 15px;
-        padding: 15px 17px;
-        border-radius: 15px;
-        box-shadow: 0 15px 40px rgba(24,51,46,.16);
+        padding: 16px 18px;
+        border-radius: 18px;
+        background: rgba(255,255,255,.92);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 18px 50px rgba(24,51,46,.18);
     }
 
 
-    /* STATS */
+    /* =================================
+       PREMIUM STATS
+    ================================= */
+
     .stats {
         display: flex;
+        gap: 10px;
         overflow-x: auto;
-        gap: 12px;
-        padding: 22px 20px;
+        padding: 24px 20px;
         scrollbar-width: none;
     }
 
@@ -170,55 +181,57 @@
     }
 
     .stats div {
-        flex: 0 0 135px;
-        padding: 18px 15px;
-        border-radius: 15px;
-        background: rgba(255,255,255,.07);
+        flex: 0 0 125px;
+        padding: 20px 15px;
+        border-radius: 18px;
+        background: rgba(255,255,255,.06);
     }
 
     .stats strong {
-        font-size: 26px;
-    }
-
-    .stats span {
-        font-size: 11px;
-        line-height: 1.4;
+        font-size: 27px;
     }
 
 
-    /* SECTIONS */
+    /* =================================
+       SECTIONS
+    ================================= */
+
     .section,
     .testimonial-section {
-        padding: 72px 20px;
+        padding: 78px 20px;
     }
 
     .section-head {
         display: block;
-        margin-bottom: 30px;
+        margin-bottom: 32px;
     }
 
     .section h2,
     .split-copy h2 {
-        font-size: 40px;
-        line-height: 1.05;
-        letter-spacing: -1px;
+        font-family: 'Playfair Display', serif;
+        font-size: 42px;
+        line-height: 1.02;
+        letter-spacing: -1.5px;
     }
 
     .section-head .text-link {
         display: inline-block;
-        margin-top: 15px;
+        margin-top: 17px;
     }
 
 
-    /* SERVICES */
+    /* =================================
+       PREMIUM SERVICE CARDS
+    ================================= */
+
     .service-grid,
     .service-grid.six {
         display: flex;
         overflow-x: auto;
         gap: 14px;
-        scrollbar-width: none;
         margin-right: -20px;
-        padding-bottom: 5px;
+        padding-right: 20px;
+        scrollbar-width: none;
     }
 
     .service-grid::-webkit-scrollbar {
@@ -227,61 +240,60 @@
 
     .service-card {
         flex: 0 0 82%;
-        min-height: 235px;
-        padding: 25px;
-        border-radius: 18px;
+        min-height: 270px;
+        padding: 28px;
+        border-radius: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 12px 35px rgba(24,51,46,.05);
     }
 
     .service-card .icon {
-        margin-bottom: 28px;
+        font-size: 30px;
     }
 
     .service-card h3 {
-        font-size: 20px;
-    }
-
-    .service-card p {
-        font-size: 13px;
-        line-height: 1.6;
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
     }
 
 
-    /* IMAGE + TEXT */
+    /* =================================
+       LARGE IMAGE SECTIONS
+    ================================= */
+
     .split-section {
         display: flex;
         flex-direction: column;
-        gap: 42px;
-        padding: 72px 20px;
+        gap: 45px;
+        padding: 78px 20px;
     }
 
     .image-frame img {
         width: 100%;
-        height: 390px;
-        border-radius: 22px;
+        height: 440px;
+        object-fit: cover;
+        border-radius: 24px;
+        box-shadow: 0 25px 60px rgba(24,51,46,.13);
     }
 
     .split-copy > p {
         font-size: 15px;
-        line-height: 1.75;
-    }
-
-    .checks {
-        margin: 22px 0 28px;
-    }
-
-    .checks li {
-        font-size: 14px;
-        margin: 14px 0;
+        line-height: 1.8;
     }
 
 
-    /* TESTIMONIALS */
+    /* =================================
+       TESTIMONIALS
+    ================================= */
+
     .testimonial-grid {
         display: flex;
         overflow-x: auto;
         gap: 14px;
-        scrollbar-width: none;
         margin-right: -20px;
+        scrollbar-width: none;
     }
 
     .testimonial-grid::-webkit-scrollbar {
@@ -290,38 +302,49 @@
 
     .testimonial-grid blockquote {
         flex: 0 0 88%;
-        padding: 28px;
-        border-radius: 18px;
-        font-size: 18px;
+        padding: 30px;
+        border-radius: 22px;
+        font-size: 19px;
+        line-height: 1.6;
+        box-shadow: 0 12px 35px rgba(24,51,46,.05);
     }
 
 
-    /* CTA */
+    /* =================================
+       LUXURY CTA
+    ================================= */
+
     .cta {
-        margin: 0 20px 55px;
-        padding: 38px 25px;
+        margin: 0 20px 65px;
+        padding: 42px 27px;
+        border-radius: 25px;
         display: flex;
         flex-direction: column;
-        align-items: stretch;
+        align-items: flex-start;
         gap: 25px;
-        border-radius: 20px;
+        box-shadow: 0 25px 60px rgba(24,51,46,.16);
     }
 
     .cta h2 {
-        font-size: 33px;
-        line-height: 1.1;
+        font-family: 'Playfair Display', serif;
+        font-size: 36px;
+        line-height: 1.05;
     }
 
     .cta .btn {
         width: 100%;
-        min-height: 54px;
+        min-height: 55px;
+        border-radius: 999px;
     }
 
 
-    /* FOOTER */
+    /* =================================
+       FOOTER
+    ================================= */
+
     .footer {
         grid-template-columns: 1fr;
-        padding: 55px 20px 25px;
+        padding: 60px 20px 25px;
         gap: 30px;
     }
 
@@ -330,14 +353,18 @@
     }
 
 
-    /* PAGE HEROES */
+    /* =================================
+       OTHER PAGES
+    ================================= */
+
     .page-hero {
-        padding: 65px 20px;
+        padding: 70px 20px;
     }
 
     .page-hero h1 {
-        font-size: 46px;
-        line-height: 1;
+        font-family: 'Playfair Display', serif;
+        font-size: 48px;
+        line-height: .98;
         letter-spacing: -1.5px;
     }
 
@@ -346,115 +373,76 @@
         line-height: 1.7;
     }
 
-
-    /* DOCTORS */
     .doctor-grid {
         display: flex;
         overflow-x: auto;
         gap: 15px;
-        scrollbar-width: none;
         margin-right: -20px;
-    }
-
-    .doctor-grid::-webkit-scrollbar {
-        display: none;
+        scrollbar-width: none;
     }
 
     .doctor-card {
         flex: 0 0 82%;
-        border-radius: 18px;
+        border-radius: 22px;
+        overflow: hidden;
     }
 
     .doctor-card img {
-        height: 360px;
+        height: 390px;
     }
 
-
-    /* DOCTOR PROFILE */
     .profile-hero {
         display: flex;
         flex-direction: column;
-        padding: 55px 20px;
-        gap: 35px;
+        padding: 65px 20px;
+        gap: 38px;
     }
 
     .profile-hero img {
         width: 100%;
-        height: 430px;
-        border-radius: 120px 120px 20px 20px;
+        height: 450px;
+        border-radius: 140px 140px 22px 22px;
     }
 
     .profile-hero h1 {
-        font-size: 47px;
-        line-height: 1;
+        font-family: 'Playfair Display', serif;
+        font-size: 50px;
+        line-height: .98;
     }
 
 
-    /* TREATMENTS */
-    .treatment {
-        gap: 60px;
-    }
-
-    .treatment article {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-    }
-
-    .treatment article:nth-child(2) img {
-        order: 0;
-    }
-
-    .treatment img {
-        height: 330px;
-        border-radius: 20px;
-    }
-
-    .treatment h2 {
-        font-size: 39px;
-    }
-
-
-    /* APPOINTMENT */
+    /* BOOKING */
     .booking-wrap {
         display: flex;
         flex-direction: column;
-        padding: 50px 20px;
-        gap: 20px;
+        padding: 55px 20px;
+        gap: 18px;
     }
 
     .booking-form,
     .side-card {
-        padding: 24px;
-        border-radius: 18px;
+        padding: 25px;
+        border-radius: 20px;
     }
 
     .form-row {
         grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    .booking-form input,
-    .booking-form select,
-    .booking-form textarea {
-        min-height: 50px;
-        font-size: 16px;
     }
 
 
     /* GALLERY */
     .gallery {
         grid-template-columns: 1fr;
-        padding: 50px 20px;
-        gap: 12px;
+        padding: 55px 20px;
+        gap: 14px;
     }
 
     .gallery img,
     .gallery img:nth-child(2),
     .gallery img:nth-child(5) {
-        height: 340px;
+        height: 350px;
         grid-row: auto;
-        border-radius: 18px;
+        border-radius: 22px;
     }
 
 
@@ -462,73 +450,22 @@
     .contact-grid {
         display: flex;
         flex-direction: column;
-        padding: 50px 20px;
-        gap: 30px;
+        padding: 55px 20px;
+        gap: 25px;
     }
 
     .map-placeholder {
-        min-height: 320px;
-        border-radius: 18px;
-    }
-
-
-    /* FAQ */
-    .faq {
-        padding: 0 20px;
-    }
-
-    .faq details {
-        padding: 20px;
-        border-radius: 14px;
-    }
-
-    .faq summary {
-        font-size: 14px;
-        line-height: 1.5;
+        min-height: 340px;
+        border-radius: 22px;
     }
 
 
     /* WHATSAPP */
     .whatsapp {
-        width: 54px;
-        height: 54px;
+        width: 56px;
+        height: 56px;
         right: 18px;
         bottom: 18px;
-    }
-}
-
-
-/* =========================================
-   SMALL PHONES
-========================================= */
-
-@media (max-width: 390px) {
-
-    .hero {
-        padding-left: 17px;
-        padding-right: 17px;
-    }
-
-    .hero h1 {
-        font-size: 43px;
-    }
-
-    .hero-visual > img {
-        height: 390px;
-    }
-
-    .section,
-    .testimonial-section {
-        padding-left: 17px;
-        padding-right: 17px;
-    }
-
-    .service-card {
-        flex-basis: 88%;
-    }
-
-    .cta {
-        margin-left: 17px;
-        margin-right: 17px;
+        box-shadow: 0 15px 35px rgba(24,51,46,.25);
     }
 }
